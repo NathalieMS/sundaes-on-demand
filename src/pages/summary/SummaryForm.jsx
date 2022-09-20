@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { Popover } from "react-bootstrap";
-import OverlayTrigger from "react-bootstrap";
+import { Popover } from "react-bootstrap/Popover";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 
 //   const Example = () => (
     //     <OverlayTrigger trigger="click" placement="right" overlay={popover}>
@@ -16,7 +16,8 @@ import OverlayTrigger from "react-bootstrap";
         
         const popover = (
           <Popover id="termsandconditions-popover">
-            <Popover.Body>No ice cream will actually be delivered</Popover.Body>
+            <Popover.Body>
+            No ice cream will actually be delivered</Popover.Body>
           </Popover>
         );
 
