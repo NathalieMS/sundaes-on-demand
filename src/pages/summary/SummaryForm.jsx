@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Popover from "react-bootstrap/Popover";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import { Popover } from "react-bootstrap";
+import OverlayTrigger from "react-bootstrap";
 
 //   const Example = () => (
     //     <OverlayTrigger trigger="click" placement="right" overlay={popover}>
     //       <Button variant="success">Click me to see</Button>
     //     </OverlayTrigger>
     //   );
-  
     
     export default function SummaryForm() {
         const [tcChecked, setTcChecked] = useState(false);
@@ -25,13 +24,14 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
     <span>
       I agree to
       <OverlayTrigger placement="right" overlay={popover}>
-        <span style={{ color: "blue" }}> Terms and Conditions</span>
+        <span style={{ color: 'blue' }}> Terms and Conditions</span>
       </OverlayTrigger>
     </span>
   );
 
+
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form>
       <Form.Group controlId="terms-and-conditions">
         <Form.Check
           type="checkbox"
