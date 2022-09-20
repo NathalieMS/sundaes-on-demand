@@ -24,10 +24,10 @@ const SummaryForm = () => {
 
   return (
     <Form>
-      <Form.Group>
+            <Form.Group>
         <Form.Check
           type="checkbox"
-          checked={checked}
+          defaultChecked={checked}
           label={checkboxLabel}
           onClick={(e) => setChecked(e.target.checked)}
         />

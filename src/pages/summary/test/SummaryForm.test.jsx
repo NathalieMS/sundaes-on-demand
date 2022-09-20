@@ -6,7 +6,7 @@ import {
 import userEvent from "@testing-library/user-event";
 import SummaryForm from "../SummaryForm";
 
-test("checkbox is uncheck, checkbox enables button, unchecking checkbox disables button", () => {
+test("checkbox is uncheck, checkbox enables button, unchecking checkbox disables button", async () => {
   render(<SummaryForm />);
 
   const checkbox = screen.getByRole("checkbox");
@@ -15,10 +15,10 @@ test("checkbox is uncheck, checkbox enables button, unchecking checkbox disables
   expect(checkbox).not.toBeChecked();
   expect(button).toBeDisabled();
 
-  userEvent.click(checkbox);
+  await userEvent.click(checkbox);
   expect(button).toBeEnabled();
 
-  userEvent.click(checkbox);
+  await userEvent.click(checkbox);
   expect(button).toBeDisabled();
 });
 
@@ -31,7 +31,7 @@ test("popover responds to hover", async () => {
   expect(nullPopover).not.toBeInTheDocument();
 
   const termsAndConditions = screen.getByText(/terms and conditions/i);
-  userEvent.hover(termsAndConditions);
+  await userEvent.hover(termsAndConditions);
 
   const popover = screen.getByText(/no ice cream will actually be delivered/i);
   expect(popover).toBeInTheDocument();
